@@ -29,16 +29,15 @@ class CreateImageAPI(MethodView):
         images.post_image()
 
 
+@user_blp.route('/')
+class UsersAPI(MethodView):
+    def post(self):
+        try:
+            users.post_user()
+        except:
+            return jsonify({"message": "유저 입력에 실패했습니다."})
 
 
-
-
-
-
-
-
-
-        
 @question_blp.route('/<int:question_id>')
 class QuestionsAPI(MethodView):
     def get(self, question_id):

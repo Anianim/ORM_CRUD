@@ -2,7 +2,10 @@ from config import db
 from flask import Flask
 from flask_smorest import Api
 from flask_migrate import Migrate
-from app.routes import user_blp, question_blp , image_blp, choice_blp, submit_blp, questions_blp
+from flask_smorest import Api
+from services.users import user_blp
+
+import app.models
 
 migrate = Migrate()
 
@@ -31,10 +34,6 @@ def create_app():
     api.register_blueprint(questions_blp)
 
     # 블루 프린트 등록
-    # application.register_blueprint(user_blp)
-    # application.register_blueprint(question_blp)
-    # application.register_blueprint(submit_blp)
-    # application.register_blueprint(image_blp)
-    # application.register_blueprint(choice_blp)
+    application.register_blueprint(user_blp, url_prefix='/user')
 
     return application

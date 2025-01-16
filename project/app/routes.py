@@ -32,8 +32,9 @@ class CreateImageAPI(MethodView):
 @user_blp.route('/')
 class UsersAPI(MethodView):
     def post(self):
+        user_data = request.json
         try:
-            users.post_user()
+            users.post_user(user_data)
         except:
             return jsonify({"message": "유저 입력에 실패했습니다."})
 
@@ -41,7 +42,7 @@ class UsersAPI(MethodView):
 @question_blp.route('/<int:question_id>')
 class QuestionsAPI(MethodView):
     def get(self, question_id):
-        question = questions.get_question(question_id)
+        questions.get_question(question_id)
 
 
 @question_blp.route('/')

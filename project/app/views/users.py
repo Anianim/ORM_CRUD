@@ -12,14 +12,13 @@ def get_user():
     
     
 # 유저 데이터 저장
-def post_user():
-    user_data = request.json
-    user = User
-    user.name = user_data["name"]
-    user.email = user_data["email"]
-    user.age = user_data["age"]
-    user.gender = user_data["gender"]
-    
+def post_user(user_data):
+    user = User(
+        name = user_data["name"],
+        email = user_data["email"],
+        age = user_data["age"],
+        gender = user_data["gender"]
+    )
     db.session.add(user)
     db.session.commit()
     

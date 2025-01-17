@@ -116,7 +116,6 @@ class Answer(BaseModel):
     __tablename__ = "answers"
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"))
     choice_id = db.Column(db.Integer, db.ForeignKey("choices.id"))
-    # question_id = db.Column(db.Integer, db.ForignKey("questions.id"))
 
     def to_dict(self):
         return {

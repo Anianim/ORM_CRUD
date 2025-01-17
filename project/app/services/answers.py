@@ -20,8 +20,8 @@ def submit():
             # 답변 저장
             answer = Answer(user_id=user_id, choice_id=choice_id)
             db.session.add(answer)
-
         db.session.commit()
-        return jsonify({"message": f"Success Submit"})
+
+        return jsonify({"message": f"{user_id}번째 설문을 저장했습니다."})
     except :
-        return jsonify({"message": "Fail Submit"})
+        return jsonify({"message": "설문 저장에 실패했습니다."})

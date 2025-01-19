@@ -30,7 +30,7 @@ def post_choice():
     
     if data :
         choice = Choices(
-            content = data.get("content"),
+            text = data.get("text"),
             sqe = data.get("sqe"),
             question_id = data.get("question_id")
         )

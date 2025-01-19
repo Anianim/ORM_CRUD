@@ -4,7 +4,7 @@ db = SQLAlchemy()
 
 
 class Config:
-    SQLALCHEMY_DATABASE_URI = "mysql+pymysql://root:1234@localhost/orm_crud"
+    SQLALCHEMY_DATABASE_URI = "mysql+pymysql://root:!Aw1234!@localhost/orm_crud"
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SQLALCHEMY_POOL_SIZE = 10
     SQLALCHEMY_POOL_TIMEOUT = 5

@@ -94,7 +94,7 @@ class Question(BaseModel):
 
 class Choices(BaseModel):
     __tablename__ = "choices"
-    content = db.Column(db.content, nullable=False)
+    content = db.Column(db.TEXT, nullable=False)
     is_active = db.Column(db.Boolean, nullable=False, default=True)
     sqe = db.Column(db.Integer, nullable=False)
 

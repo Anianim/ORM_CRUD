@@ -11,8 +11,18 @@ def get_question(question_id):
 
     return jsonify({
             "question": {
-                "title": question.title,"image": {"url": image.url if image else None}
-    }})
+                "id": question.id,
+                "title": question.title,
+                "image": {"url": image.url if image else None},
+                "choices": [
+            {
+                "id": choice.id,
+                "text": choice.text,
+                "is_active": choice.is_active,
+                "sqe": choice.sqe
+            }
+            for choice in Choices.query.filter_by(question_id=question.id).all()
+        ]}})
 
 #질문 개수 확인
 def count():

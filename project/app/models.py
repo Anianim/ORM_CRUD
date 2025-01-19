@@ -94,7 +94,7 @@ class Question(BaseModel):
 
 class Choices(BaseModel):
     __tablename__ = "choices"
-    content = db.Column(db.Text, nullable=False)
+    text = db.Column(db.Text, nullable=False)
     is_active = db.Column(db.Boolean, nullable=False, default=True)
     sqe = db.Column(db.Integer, nullable=False)
 
@@ -103,7 +103,7 @@ class Choices(BaseModel):
     def to_dict(self):
         return {
             "id": self.id,
-            "content": self.content,
+            "text": self.text,
             "is_active": self.is_active,
             "sqe": self.sqe,
             "question_id": self.question_id,

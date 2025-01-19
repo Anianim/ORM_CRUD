@@ -9,7 +9,6 @@ def submit():
         for answer_data in answers_data:
             user_id = answer_data["userId"]
             choice_id = answer_data["choiceId"]
-
             user = User.query.get(user_id)
             choice = Choices.query.get(choice_id)
             if not user:

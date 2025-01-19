@@ -13,8 +13,9 @@ def get_choices(question_id):
             "choices": [
                 {
                     "id": choice.id,
-                    "content": choice.content,
+                    "text": choice.text,  
                     "is_active": choice.is_active,
+                    "sqe": choice.sqe
                 }
                 for choice in choices
             ]

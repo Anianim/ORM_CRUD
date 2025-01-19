@@ -10,10 +10,9 @@ def get_question(question_id):
     image = Image.query.get(question.image_id)
 
     return jsonify({
-        "id": question.id,
-        "title": question.title,
-        "image": image.url if image else None,        
-    })
+            "question": {
+                "title": question.title,"image": {"url": image.url if image else None}
+    }})
 
 #질문 개수 확인
 def count():

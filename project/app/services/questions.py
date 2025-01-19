@@ -17,7 +17,7 @@ def get_question(question_id):
                 "choices": [
             {
                 "id": choice.id,
-                "text": choice.text,
+                "content": choice.content,
                 "is_active": choice.is_active,
                 "sqe": choice.sqe
             }

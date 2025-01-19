@@ -13,7 +13,7 @@ def get_choices(question_id):
             "choices": [
                 {
                     "id": choice.id,
-                    "text": choice.text,  
+                    "content": choice.content,  
                     "is_active": choice.is_active,
                     "sqe": choice.sqe
                 }
@@ -30,7 +30,7 @@ def post_choice():
     
     if data :
         choice = Choices(
-            text = data.get("text"),
+            content = data.get("content"),
             sqe = data.get("sqe"),
             question_id = data.get("question_id")
         )
